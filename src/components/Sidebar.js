@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { openShopMenu, openCartMenu, openSearchMenu, closeSearchMenu } from '../actions/navigation.action';
 import * as Icon from 'react-feather';
 import { Link } from 'react-router-dom';
 
+
 class Sidebar extends Component {
     render() {
+        const { openShopMenu, openCartMenu, openSearchMenu, menu } = this.props;
         return (
             <div className="main-sidebar">
                 <div className="sidebar-brand">
@@ -14,20 +18,20 @@ class Sidebar extends Component {
                 <div className="sidebar-inner">
                     <ul className="icon-menu">
                         <li>
-                            <Link to="#" className="open-shop">
+                            <Link to="#" className="open-shop" onClick={openShopMenu}>
                                 <Icon.Home />
                             </Link>
                         </li>
                         <li>
-                            <Link to="#" className="open-cart">
-                                <Icon.ShoppingCart />
+                            <Link to="#" className="open-cart" onClick={openCartMenu}>
+                                <Icon.ShoppingCart/>
                             </Link>
                         </li>
                         <li>
-                            <Link to="#" className="open-search">
+                            <Link to="#" className="open-search" onClick={openSearchMenu}>
                                 <Icon.Search />
                             </Link>
-                            <Link to="#" className="is-hidden is-inactive">
+                            <Link to="#" className="is-hidden" onClick={closeSearchMenu}>
                                 <Icon.X />
                             </Link>
                         </li>
@@ -49,4 +53,13 @@ class Sidebar extends Component {
         );
     }
 }
-export default Sidebar;
+const mapStateToProps = (state) => {
+    return { menu: state.menu }
+}
+
+export default connect(mapStateToProps, {
+    openShopMenu,
+    openCartMenu,
+    openSearchMenu,
+    closeSearchMenu
+})(Sidebar);

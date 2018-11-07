@@ -16,6 +16,7 @@ import QuickViewTrigger from './components/QuickViewTrigger';
 
 import store, { history } from './store';
 import * as serviceWorker from './serviceWorker';
+import Explore from './containers/Explore';
 
 ReactDOM.render(
     <Provider store={store}>
@@ -25,6 +26,7 @@ ReactDOM.render(
                 <Navbar />
                 <Sidebar />
                 <Route exact path={"/"} component={Home} />
+                <Route exact path={"/explore"} component={Explore} />
                 <Route exact path={"/auth"} component={Authenticate} />
                 <QuickViewTrigger />
             </div>

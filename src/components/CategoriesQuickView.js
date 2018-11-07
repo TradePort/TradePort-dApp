@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const CategoriesQuickView = () => (
-    <div className="category-quickview">
+const CategoriesQuickView = ({ menu }) => (
+    <div className={`category-quickview ${(menu.isQuickViewOpen) ? 'is-active' : ''}`}>
             <div className="inner">
                 <ul className="category-menu">
                     <li>
                         <Link to="/products">
                             <span>House</span>
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                            {/* <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                  viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;">
                                 <g>
                                     <g>
@@ -46,12 +46,13 @@ const CategoriesQuickView = () => (
                                         <rect x="234.667" y="437.333" width="42.667" height="21.333"/>
                                     </g>
                                 </g>
-                            </svg>                </Link>
+                            </svg> */}
+                                            </Link>
                     </li>
                     <li>
                         <Link to="/products">
                             <span>Office</span>
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                            {/* <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                  viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;">
                                 <g>
                                     <g>
@@ -140,12 +141,13 @@ const CategoriesQuickView = () => (
                                         <rect x="106.667" y="170.667" width="256" height="21.333"/>
                                     </g>
                                 </g>
-                            </svg>                </Link>
+                            </svg>  */}
+                                           </Link>
                     </li>
                     <li>
                         <Link to="/products">
                             <span>For kids</span>
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                            {/* <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                  viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;">
                                 <g>
                                     <g>
@@ -265,12 +267,13 @@ const CategoriesQuickView = () => (
                                         <rect x="277.333" y="448" width="106.667" height="21.333"/>
                                     </g>
                                 </g>
-                            </svg>                </Link>
+                            </svg> */}
+                                            </Link>
                     </li>
                     <li>
                         <Link to="/products">
                             <span>Kitchen</span>
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                            {/* <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                  viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;">
                                 <g>
                                     <g>
@@ -362,12 +365,13 @@ const CategoriesQuickView = () => (
                                                  c5.891,0,10.667-4.776,10.667-10.667V320C213.333,314.109,208.558,309.333,202.667,309.333z M192,352h-10.667v-21.333H192V352z"/>
                                     </g>
                                 </g>
-                            </svg>                </Link>
+                            </svg>                 */}
+                            </Link>
                     </li>
                     <li>
                         <Link to="/products">
                             <span>Accessories</span>
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                            {/* <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                  viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;">
                                 <g>
                                     <g>
@@ -415,12 +419,13 @@ const CategoriesQuickView = () => (
                                                  C213.333,460.898,232.436,480,256,480s42.667-19.102,42.667-42.667H277.333z"/>
                                     </g>
                                 </g>
-                            </svg>                </Link>
+                            </svg>                */}
+                             </Link>
                     </li>
                     <li>
                         <Link to="/products">
                             <span>View All</span>
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                            {/* <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                  viewBox="0 0 512.027 512.027" style="enable-background:new 0 0 512.027 512.027;">
                                 <g>
                                     <g>
@@ -566,14 +571,17 @@ const CategoriesQuickView = () => (
                                                  z"/>
                                     </g>
                                 </g>
-                            </svg>                </Link>
+                            </svg>                 */}
+                            </Link>
                     </li>
                 </ul>
         
                 <div className="all-categories is-hidden-mobile">
-                    <Link to="/products">Show all categories</Link>
+                    <Link to="/categories">Show all categories</Link>
                     <div className="centered-divider"></div>
                 </div>
             </div>
         </div>
 );
+
+export default CategoriesQuickView;

@@ -1,36 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import * as Icon from 'react-feather';
 
-const ExploreQuickView = () => (
-    <div className="shop-quickview has-background-image" data-background="http://via.placeholder.com/1280x853">
+const ExploreQuickView = ({ menu, closeShopMenu }) => (
+    <div className={`shop-quickview has-background-image ${(menu.isShopOpen) ? 'is-active' : ''}`} data-background="http://via.placeholder.com/1280x853">
         <div className="inner">
             <div className="quickview-header">
                 <h2>TradePort</h2>
-                <span id="close-shop-sidebar"><i data-feather="x"></i></span>
+                <span id="close-shop-sidebar">
+                    <Icon.X onClick={closeShopMenu}/>
+                </span>
             </div>
             <ul className="shop-menu">
                 <li>
                     <Link to="/shop">
                         <span>Shop</span>
-                        <i data-feather="grid"></i>
+                        <Icon.Grid />
                     </Link>
                 </li>
                 <li>
                     <Link to="/account">
                         <span>My Account</span>
-                        <i data-feather="user"></i>
+                        <Icon.User />
                     </Link>
                 </li>
                 <li>
                     <Link to="/orders">
                         <span>My Orders</span>
-                        <i data-feather="credit-card"></i>
+                        <Icon.CreditCard />
                     </Link>
                 </li>
                 <li>
                     <Link to="/wishlist">
                         <span>My Wishlists</span>
-                        <i data-feather="heart"></i>
+                        <Icon.Heart />
                     </Link>
                 </li>
             </ul>
