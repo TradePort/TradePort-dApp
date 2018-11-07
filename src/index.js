@@ -2,15 +2,33 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { Provider } from 'react-redux';
+import { Router, Route } from 'react-router'
 
 import './assets/scss/core.scss';
-import App from './App';
+
+import Home from './containers/Home';
+import Authenticate from './containers/Authenticate';
+
+import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
+import QuickViewTrigger from './components/QuickViewTrigger';
+// import Spinner from './components/Spinner';
+
 import store, { history } from './store';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
     <Provider store={store}>
-        <App history={history} />
+        <Router history={history}>
+            <div>
+                {/* <Spinner /> */}
+                <Navbar />
+                <Sidebar />
+                <Route exact path={"/"} component={Home} />
+                <Route exact path={"/auth"} component={Authenticate} />
+                <QuickViewTrigger />
+            </div>
+        </Router>
     </Provider>,
     document.getElementById('root')
 );

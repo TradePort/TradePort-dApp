@@ -19,9 +19,9 @@ const historyMiddleware = routerMiddleware(history);
 const middlewares = [thunk, historyMiddleware];
 
 // Redux Logger
-// if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'development') {
     middlewares.push(logger);
-// }
+}
 
 const enhancer = composeEnhancers(
     applyMiddleware(...middlewares)
