@@ -5,7 +5,6 @@ const Authenticate = () => (
     <div className="shop-wrapper">
         <div className="section">
             <div className="container">
-
                 <div className="columns account-header is-auth">
                     <div className="column is-10 is-offset-1 is-tablet-landscape-padded">
                         <div className="auth-title">
@@ -37,7 +36,7 @@ const Authenticate = () => (
                                             </ul>
                                         </div>
                                         <div id="login" className="navtab-content is-active">
-                                            {/* <form>
+                                            <form>
                                             <div className="control">
                                                 <label className="auth-label">Email*</label>
                                                 <input type="email" className="input" placeholder="" />
@@ -59,10 +58,10 @@ const Authenticate = () => (
                                                 </button>
                                                 <Link to="#" className="forgotten">Forgot Password ?</Link>
                                             </div>
-                                        </form> */}
+                                        </form>
                                         </div>
                                         <div id="register" className="navtab-content">
-                                            {/* <form>
+                                            <form>
                                             <div className="control">
                                                 <label className="auth-label">Email*</label>
                                                 <input type="email" className="input" placeholder="" />
@@ -80,7 +79,7 @@ const Authenticate = () => (
                                                     <span>Register</span>
                                                 </button>
                                             </div>
-                                        </form> */}
+                                        </form>
                                         </div>
                                     </div>
                                 </div>

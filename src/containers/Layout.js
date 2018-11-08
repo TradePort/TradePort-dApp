@@ -15,13 +15,13 @@ import Home from '../views/Home';
 import Authenticate from '../views/Authenticate';
 import Explore from '../views/Explore';
 
-import Navbar from '../components/Navbar';
-import Sidebar from '../components/Sidebar';
-import QuickViewTrigger from '../components/QuickViewTrigger';
-import CartQuickView from '../components/CartQuickView';
-import ExploreQuickView from '../components/ExploreQuickView';
+import Navbar from '../components/NavigationMenu/Navbar';
+import Sidebar from '../components/NavigationMenu/Sidebar';
+import QuickViewTrigger from '../components/Overlay/QuickViewTrigger';
+import CartQuickView from '../components/Overlay/CartQuickView';
+import ExploreQuickView from '../components/Overlay/ExploreQuickView';
 import Search from '../components/Search';
-import CategoriesQuickView from '../components/CategoriesQuickView';
+import CategoriesQuickView from '../components/Overlay/CategoriesQuickView';
 
 const Layout = ({ menu, closeCartMenu, closeSearchMenu, closeShopMenu, openShopMenu, openCartMenu, openSearchMenu }) => (
     <div>

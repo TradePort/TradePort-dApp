@@ -1,5 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Slider from 'react-slick';
+
+const settings = {
+    dots: true,
+    infinte: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+}
 
 const Home = () => (
     <div className="shop-wrapper has-background-image">
@@ -14,12 +23,12 @@ const Home = () => (
                     </Link>
         </div>
         <div className="slider-wrapper">
-            <div className="fullscreen-slick">
+            <Slider {...settings} className="fullscreen-slick">
                 <div className="full-slide has-background-image" data-background="http://via.placeholder.com/1920x1080"></div>
                 <div className="full-slide has-background-image" data-background="http://via.placeholder.com/1920x1080"></div>
                 <div className="full-slide has-background-image" data-background="http://via.placeholder.com/1920x1080"></div>
                 <div className="full-slide has-background-image" data-background="http://via.placeholder.com/1920x1080"></div>
-            </div>
+            </Slider>
         </div>
     </div>
 );
