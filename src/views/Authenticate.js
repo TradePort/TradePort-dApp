@@ -1,11 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Search from '../components/Search';
-
 const Authenticate = () => (
     <div className="shop-wrapper">
-        <Search />
         <div className="section">
             <div className="container">
 

@@ -9,7 +9,7 @@ const CartQuickView = ({ menu, closeCartMenu }) => {
                 <div className="quickview-header">
                     <h2>Quick Cart</h2>
                     <span id="close-cart-sidebar" onClick={closeCartMenu}>
-                        <Icon.X/>
+                        <Icon.X />
                     </span>
                 </div>
                 <div className="cart-body">

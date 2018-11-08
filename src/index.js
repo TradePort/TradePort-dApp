@@ -2,35 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { Provider } from 'react-redux';
-import { Router, Route } from 'react-router'
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import './assets/scss/core.scss';
 
-import Home from './containers/Home';
-import Authenticate from './containers/Authenticate';
+import Layout from './containers/Layout';
 
-import Navbar from './components/Navbar';
-import Sidebar from './components/Sidebar';
-import QuickViewTrigger from './components/QuickViewTrigger';
-// import Spinner from './components/Spinner';
-
-import store, { history } from './store';
+import store from './store';
 import * as serviceWorker from './serviceWorker';
-import Explore from './containers/Explore';
 
 ReactDOM.render(
     <Provider store={store}>
-        <Router history={history}>
-            <div>
-                {/* <Spinner /> */}
-                <Navbar />
-                <Sidebar />
-                <Route exact path={"/"} component={Home} />
-                <Route exact path={"/explore"} component={Explore} />
-                <Route exact path={"/auth"} component={Authenticate} />
-                <QuickViewTrigger />
-            </div>
-        </Router>
+        <BrowserRouter>
+            <Switch>
+                <Route path="/" name="Layout" component={Layout} />
+            </Switch>
+        </BrowserRouter>
     </Provider>,
     document.getElementById('root')
 );

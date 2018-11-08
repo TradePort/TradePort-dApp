@@ -1,6 +1,5 @@
 import * as types from '../constants/ActionTypes';
 
-
 const toggleShopMenu = payload => ({
     type: types.TOGGLE_SHOP_MENU,
     payload
@@ -53,4 +52,8 @@ export const closeSearchMenu = () => (dispatch) => {
 
 export const openQuickViewMenu = () => (dispatch) => {
     dispatch(toggleQuickViewMenu(true));
+}
+
+export const closeQuickViewMenu = () => (dispatch) => {
+    dispatch(toggleQuickViewMenu(false));
 }

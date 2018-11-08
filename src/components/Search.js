@@ -1,15 +1,15 @@
 import React from 'react';
 import * as Icon from 'react-feather';
 
-const Search = () => (
+const Search = ({menu, closeSearchMenu}) => (
     <div>
-        <div className="search-overlay"></div>
-        <div className="search-input-wrapper is-desktop is-hidden">
+        <div className={`search-overlay ${(menu.isSearchOpen) ? 'is-active' : ''}`}></div>
+        <div className={`search-input-wrapper is-desktop ${(menu.isSearchOpen) ? '' : 'is-hidden'}`}>
             <div className="field">
-                <div className="control">
+                <div className={`control ${(menu.isSearchOpen) ? 'is-active' : ''}`}>
                     <input type="text" name="search" autoFocus={true} required />
                     <span id="clear-search" role="button">
-                        <Icon.X />
+                        <Icon.X onClick={closeSearchMenu}/>
                     </span>
                     <span className="search-help">Type the name of the product you are looking for</span>
                 </div>

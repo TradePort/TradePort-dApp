@@ -1,29 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import * as Icon from 'react-feather';
-import { openQuickViewMenu } from '../actions/navigation.action';
+import { openQuickViewMenu, closeQuickViewMenu } from '../actions/navigation.action';
 
-const QuickViewTrigger = ({ menu, openQuickViewMenu }) => (
-    <div>
-        <div id="quickview-trigger" className={`menu-fab ${(menu.isQuickViewOpen) ? 'is-hidden' : 'is-active'} is-hidden-mobile`}>
-            <Link className="hamburger-btn" to="#" onClick={openQuickViewMenu}>
-                <span className="menu-toggle">
-                    <span className="icon-box-toggle">
-                        <span className="rotate">
-                            <i className="icon-line-top"></i>
-                            <i className="icon-line-center"></i>
-                            <i className="icon-line-bottom"></i>
-                        </span>
+const QuickViewTrigger = ({ menu, openQuickViewMenu, closeQuickViewMenu }) => (
+    <div id="quickview-trigger" className="menu-fab is-hidden-mobile">
+        <Link className="hamburger-btn" to="#" onClick={(menu.isQuickViewOpen) ? closeQuickViewMenu : openQuickViewMenu}>
+            <span className="menu-toggle">
+                <span className={`icon-box-toggle ${(menu.isQuickViewOpen) ? 'active' : ''}`}>
+                    <span className="rotate">
+                        <i className="icon-line-top"></i>
+                        <i className="icon-line-center"></i>
+                        <i className="icon-line-bottom"></i>
                     </span>
                 </span>
-            </Link>
-        </div>
-        {/* <div className={`menu-fab ${(menu.isQuickViewOpen) ? 'is-hidden' : 'is-active'} is-hidden-mobile`}>
-            <Link className="hamburger-btn" to="#">
-                <Icon.X />
-            </Link>
-        </div> */}
+            </span>
+        </Link>
     </div>
 );
 
@@ -32,5 +24,6 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, {
-    openQuickViewMenu
+    openQuickViewMenu,
+    closeQuickViewMenu
 })(QuickViewTrigger);

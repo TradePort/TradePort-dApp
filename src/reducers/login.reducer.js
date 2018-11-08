@@ -1,6 +1,4 @@
-const USER_LOADING = 'USER_LOADING';
-const USER_FULLFILLED = 'USER_FULLFILLED';
-const USER_ERROR = 'USER_ERROR';
+import * as actionTypes from '../constants/ActionTypes';
 
 const loginReducer = (state = {
     error: null,
@@ -8,21 +6,21 @@ const loginReducer = (state = {
     user: []
 }, action) => {
     switch (action.type) {
-        case USER_LOADING:
+        case actionTypes.LOGIN_LOADING:
             return {
                 ...state,
                 error: null,
                 loading: true,
                 user: []
             };
-        case USER_FULLFILLED:
+        case actionTypes.LOGIN_SUCCESS:
             return {
                 ...state,
                 error: null,
                 loading: false,
                 user: action.payload
             };
-        case USER_ERROR:
+        case actionTypes.LOGIN_ERROR:
             return {
                 ...state,
                 error: action.payload,
