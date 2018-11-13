@@ -1,8 +1,9 @@
 import React from 'react';
 import * as Icon from 'react-feather';
 import { Link } from 'react-router-dom';
+import loadWeb3 from '../../util/web3/loadWeb3';
 
-const Sidebar = ({ openShopMenu, openCartMenu, openSearchMenu, menu, closeSearchMenu }) => (
+const Sidebar = ({ openShopMenu, openCartMenu, openSearchMenu, menu, closeSearchMenu, openSignInModal }) => (
     <div className="main-sidebar">
         <div className="sidebar-brand">
             <Link to="/">
@@ -38,7 +39,7 @@ const Sidebar = ({ openShopMenu, openCartMenu, openSearchMenu, menu, closeSearch
             <ul className="bottom-menu is-hidden-mobile">
                 <li>
                     <Link to="/auth">
-                        <Icon.User />
+                        <Icon.User onClick={() => openSignInModal}/>
                     </Link>
                 </li>
             </ul>

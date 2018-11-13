@@ -6,7 +6,7 @@ const loginReducer = (state = {
     user: []
 }, action) => {
     switch (action.type) {
-        case actionTypes.LOGIN_LOADING:
+        case actionTypes.LOGIN_PENDING:
             return {
                 ...state,
                 error: null,
@@ -20,7 +20,7 @@ const loginReducer = (state = {
                 loading: false,
                 user: action.payload
             };
-        case actionTypes.LOGIN_ERROR:
+        case actionTypes.LOGIN_FAILED:
             return {
                 ...state,
                 error: action.payload,

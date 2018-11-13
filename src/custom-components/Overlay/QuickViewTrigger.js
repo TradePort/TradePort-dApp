@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { openQuickViewMenu, closeQuickViewMenu } from '../../actions/navigation.action';
+import { openQuickViewMenu, closeQuickViewMenu } from '../../actions/navigation';
 
 const QuickViewTrigger = ({ menu, openQuickViewMenu, closeQuickViewMenu }) => (
     <div id="quickview-trigger" className="menu-fab is-hidden-mobile">
