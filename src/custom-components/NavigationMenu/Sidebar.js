@@ -1,13 +1,13 @@
 import React from 'react';
 import * as Icon from 'react-feather';
 import { Link } from 'react-router-dom';
-import loadWeb3 from '../../util/web3/loadWeb3';
+import Logo from '../../assets/images/logo/nephos.png';
 
 const Sidebar = ({ openShopMenu, openCartMenu, openSearchMenu, menu, closeSearchMenu, openSignInModal }) => (
     <div className="main-sidebar">
         <div className="sidebar-brand">
             <Link to="/">
-                <img src="assets/images/logo/nephos.svg" alt="" />
+                <img src={Logo} alt="" />
             </Link>
         </div>
         <div className="sidebar-inner">

@@ -1,13 +1,14 @@
 import React from 'react';
 import * as Icon from 'react-feather';
 import { Link } from 'react-router-dom';
+import Logo from '../../assets/images/logo/nephos.png';
 
 
 const Navbar = () => (
     <nav className="navbar mobile-navbar is-hidden-desktop is-hidden-tablet" aria-label="main navigation">
         <div className="navbar-brand">
             <Link to="/" className="navbar-item">
-                <img src="assets/images/logo/nephos.svg" alt="" />
+                <img src={Logo} alt="" />
             </Link>
             <Link to="#" className="navbar-item is-icon is-sidebar-toggler">
                 <Icon.Sidebar />

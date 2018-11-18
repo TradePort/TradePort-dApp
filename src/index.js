@@ -6,14 +6,10 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import './assets/scss/core.scss';
 
-import loadWeb3 from './util/web3/loadWeb3';
-
 import Layout from './containers/Layout';
 
 import store from './store';
 import * as serviceWorker from './serviceWorker';
-
-loadWeb3(window);
 
 render(
     <Provider store={store}>
