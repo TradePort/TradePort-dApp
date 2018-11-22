@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Icon from 'react-feather';
 import { Link } from 'react-router-dom';
-import Logo from '../../assets/images/logo/nephos.png';
+import Logo from '../../assets/images/logo/logo.png';
 
 
 const Navbar = () => (
